@@ -1,0 +1,6 @@
+{
+  "name": "ORION - Personal AI Voice Assistant",
+  "description": "A JARVIS-inspired personal AI voice assistant with a glowing holographic sphere, real-time voice interaction, English-first responses, and autonomous tool calling.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  code, pre, .font-mono, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Deep Slate-Navy Base HUD Grid Background (#090D16) */
+.dark .grid-bg, .dark .hud-grid-bg {
+  background-color: #0A0E17;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.08), transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.05), transparent 70%),
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Clean Light Mode HUD Background (#F8FAFC / #F1F5F9) */
+.light .grid-bg, .light .hud-grid-bg {
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.06), transparent 60%),
+    linear-gradient(rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(203, 213, 225, 0.4) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Refined Sphere Glow */
+.orb-glow {
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.25));
+}
+
+/* HUD Line Accent */
+.hud-line {
+  background: rgba(6, 182, 212, 0.25);
+}
+
+/* Tasteful Subtle Border Highlight */
+.border-hud {
+  border-color: rgba(6, 182, 212, 0.15);
+}
+
+.border-glow {
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 23, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}
+
+.light ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8);
+}
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-radar {
+  animation: radar-sweep 10s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
